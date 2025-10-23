@@ -1,0 +1,8 @@
+device(ai,         INST_IO, devAi,         "BPMmonitor")
+device(ao,         INST_IO, devAo,         "BPMmonitor")
+device(bi,         INST_IO, devBi,         "BPMmonitor")
+device(bo,         INST_IO, devBo,         "BPMmonitor")
+device(waveform,   INST_IO, devTrigWaveform,   "BPMmonitorTrigWave")
+device(waveform,   INST_IO, devHistoryWaveform,   "BPMmonitorTripWave")
+device(waveform,   INST_IO, devADCRawDataWaveform,   "BPMmonitorADCWave")
+driver(drWrapper)
