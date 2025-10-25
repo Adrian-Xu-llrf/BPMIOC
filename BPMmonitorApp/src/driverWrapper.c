@@ -212,7 +212,7 @@ static void (*funcSetSelectExternelTrigger)(int value);
 static void SetSysTime(void);
 
 // calculate average voltage of each channel
-static void calcuateAvgVoltage(float *wfBuf, int ch_N, int length)
+static void calculateAvgVoltage(float *wfBuf, int ch_N, int length)
 
 static long InitDevice()
 {
@@ -1494,7 +1494,7 @@ static void GetSysTime(void)
 }
 
 
-static void calcuateAvgVoltage(float *wfBuf, int ch_N, int length)
+static void calculateAvgVoltage(float *wfBuf, int ch_N, int length)
 {
 	int i=0;
 	float signal_sum = 0;  // sum of effective signal
