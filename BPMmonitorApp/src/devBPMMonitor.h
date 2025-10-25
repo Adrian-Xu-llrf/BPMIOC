@@ -10,6 +10,4 @@ static long devGetInTripBufferInfo(int cmd, dbCommon *record, IOSCANPVT *ppvt);
 static long devGetInADCrawBufferInfo(int cmd, dbCommon *record, IOSCANPVT *ppvt);
 static int devIoParse();
 
-static double devCalcVoltAvg(int offset, int channel, int type);
-
 #endif

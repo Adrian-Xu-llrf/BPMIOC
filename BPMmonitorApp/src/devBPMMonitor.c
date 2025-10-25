@@ -26,7 +26,6 @@
 #include "driverWrapper.h"
 #include "devBPMMonitor.h"
 
-
 typedef enum strtype{
 	NONE = 0, 
 	REG,
@@ -34,8 +33,7 @@ typedef enum strtype{
 	AMP,
 	PHASE,
 	POWER,
-	ARRAY,
-	AVG // average voltage  
+	ARRAY
 }strtype_t;
 
 typedef struct {
@@ -238,8 +236,6 @@ static int devIoParse(char *string, recordpara_t *recordpara)
 		recordpara->type = POWER;
 	else if(strcmp(typeName, "ARRAY") == 0)
 		recordpara->type = ARRAY;
-	else if(strcmp(typeName, "AVG") == 0)
-		recordpara->type = AVG;
 	else
 		recordpara->type = NONE;
 
@@ -331,9 +327,6 @@ static long read_ai(aiRecord *record)
 			break;
 		case PHASE:
 			value = ReadData(priv->offset, priv->channel, priv->type);
-			break;
-		case AVG:
-			value = devCalcVoltAvg(priv->offset, priv->channel, priv->type);
 			break;
 		default:
 			value = 0;
@@ -428,66 +421,4 @@ static long read_wf(waveformRecord *record)
 	printf("recordpara->offset:%d\n", priv->offset); */
 	record->nord = record->nelm;
 	return 0;
-}
-
-static double devCalcVoltAvg(int offset, int channel, int type)
-{
-	float waveform[1000];
-	long long taiSec ;
-	int taiNSec;
-	int startPos, StopPos, bgStartPos, bgStopPos;
-
-	double SignalAvg = 0;
-	double bgVoltAvg = 0;
-	double VoltAvg = 0;
-	int signalCount, bgCount;
-	
-	// read Signal start position and end position from BPM monitor
-	startPos = (int)ReadData(20,0,REG);
-	StopPos = (int)ReadData(21,0,REG);
-
-	// read Background start position and end position from BPM monitor
-	bgStartPos = (int)ReadData(27,0,REG);
-	bgStopPos = (int)ReadData(28,0,REG);
-	
-	// check the boundary of Signal start position and end position
-	if (startPos < 0) startPos = 0;
-	if (StopPos > 999) StopPos = 999;
-	if (bgStartPos < 0) bgStartPos = 0;
-	if (bgStopPos > 999) bgStopPos = 999;
-	
-	// ensure start <= stop for both signal and background
-	if (startPos > StopPos) startPos = StopPos;
-	if (bgStartPos > bgStopPos) bgStartPos = bgStopPos;
-
-	// read waveform from BPMmonitor
-	readWaveform(11+channel, channel*2, 1000, waveform, &taiSec, &taiNSec);
-
-	// calculate the average voltage of the signal
-	signalCount = 0;
-	for (int i = startPos; i <= StopPos; i++)
-	{
-		SignalAvg += waveform[i];
-		signalCount++;
-	}
-	if (signalCount > 0) {
-		SignalAvg /= signalCount; // calculate the average voltage of the signal
-	}
-
-	
-	// calculate the average voltage of the background
-	bgCount = 0;
-	for (int i = bgStartPos; i <= bgStopPos; i++)
-	{
-		bgVoltAvg += waveform[i];
-		bgCount++;
-	}
-	if (bgCount > 0) {
-		bgVoltAvg /= bgCount; // calculate the average voltage of the background
-	}
-
-	// calculate the signal-to-noise ratio
-	VoltAvg = SignalAvg - bgVoltAvg;
-
-	return VoltAvg;
 }
