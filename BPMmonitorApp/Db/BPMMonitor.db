@@ -1,127 +1,127 @@
-record(ai, "$(P)_RFIn01:Amp")
+record(ai, "$(P):RFIn_01_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=0")
 }
-record(ai, "$(P)_RFIn02:Amp")
+record(ai, "$(P):RFIn_02_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=1")
 }
-record(ai, "$(P)_RFIn03:Amp")
+record(ai, "$(P):RFIn_03_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=2")
 }
-record(ai, "$(P)_RFIn04:Amp")
+record(ai, "$(P):RFIn_04_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=3")
 }
-record(ai, "$(P)_RFIn05:Amp")
+record(ai, "$(P):RFIn_05_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=4")
 }
-record(ai, "$(P)_RFIn06:Amp")
+record(ai, "$(P):RFIn_06_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=5")
 }
-record(ai, "$(P)_RFIn07:Amp")
+record(ai, "$(P):RFIn_07_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=6")
 }
-record(ai, "$(P)_RFIn08:Amp")
+record(ai, "$(P):RFIn_08_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=7")
 }
-record(ai, "$(P)_RFIn09:Amp")
+record(ai, "$(P):RFIn_09_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=8")
 }
-record(ai, "$(P)_RFIn10:Amp")
+record(ai, "$(P):RFIn_10_Amp")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@AMP:0 ch=9")
 }
-record(ai, "$(P)_RFIn01:Phase")
+record(ai, "$(P):RFIn_01_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=0")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn02:Phase")
+record(ai, "$(P):RFIn_02_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=1")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn03:Phase")
+record(ai, "$(P):RFIn_03_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=2")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn04:Phase")
+record(ai, "$(P):RFIn_04_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=3")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn05:Phase")
+record(ai, "$(P):RFIn_05_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=4")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn06:Phase")
+record(ai, "$(P):RFIn_06_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=5")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn07:Phase")
+record(ai, "$(P):RFIn_07_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=6")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn08:Phase")
+record(ai, "$(P):RFIn_08_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=7")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn09:Phase")
+record(ai, "$(P):RFIn_09_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@PHASE:0 ch=8")
 	field(EGU,"deg")
 }
-record(ai, "$(P)_RFIn10:Phase")
+record(ai, "$(P):RFIn_10_Phase")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -176,7 +176,7 @@ record(bi, "$(P):LED1_RBV")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bi, "$(P)_HistoryData:State_Rdy")
+record(bi, "$(P):HistoryDataReady")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -185,161 +185,161 @@ record(bi, "$(P)_HistoryData:State_Rdy")
 	field(ONAM, "True")
 }
 ###############BPM state.###############
-record(ai, "$(P1)_A:Vol_Raw")
+record(ai, "$(P1):Va1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=0")
 #	field(EGU,"V")
 }
-record(ai, "$(P1)_B:Vol_Raw")
+record(ai, "$(P1):Vb1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=1")
 #	field(EGU,"V")
 }
-record(ai, "$(P1)_C:Vol_Raw")
+record(ai, "$(P1):Vc1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=2")
 #	field(EGU,"V")
 }
-record(ai, "$(P1)_D:Vol_Raw")
+record(ai, "$(P1):Vd1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=3")
 #	field(EGU,"V")
 }
-record(ai, "$(P2)_A:Vol_Raw")
+record(ai, "$(P2):Va2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=4")
 #	field(EGU,"V")
 }
-record(ai, "$(P2)_B:Vol_Raw")
+record(ai, "$(P2):Vb2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=5")
 #	field(EGU,"V")
 }
-record(ai, "$(P2)_C:Vol_Raw")
+record(ai, "$(P2):Vc2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=6")
 #	field(EGU,"V")
 }
-record(ai, "$(P2)_D:Vol_Raw")
+record(ai, "$(P2):Vd2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:5 ch=7")
 #	field(EGU,"V")
 }
-record(ai, "$(P1)_A:Phase")
+record(ai, "$(P1):PHa1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=2")
 	field(EGU,"deg")
 }
-record(ai, "$(P1)_B:Phase")
+record(ai, "$(P1):PHb1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=3")
 	field(EGU,"deg")
 }
-record(ai, "$(P1)_C:Phase")
+record(ai, "$(P1):PHc1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=4")
 	field(EGU,"deg")
 }
-record(ai, "$(P1)_D:Phase")
+record(ai, "$(P1):PHd1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=5")
 	field(EGU,"deg")
 }
-record(ai, "$(P2)_A:Phase")
+record(ai, "$(P2):PHa2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=6")
 	field(EGU,"deg")
 }
-record(ai, "$(P2)_B:Phase")
+record(ai, "$(P2):PHb2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=7")
 	field(EGU,"deg")
 }
-record(ai, "$(P2)_C:Phase")
+record(ai, "$(P2):PHc2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=8")
 	field(EGU,"deg")
 }
-record(ai, "$(P2)_D:Phase")
+record(ai, "$(P2):PHd2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:6 ch=9")
 	field(EGU,"deg")
 }
-record(ai, "$(P1)_X:Pos_Raw")
+record(ai, "$(P1):rawX1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:7 ch=0")
 #	field(EGU,"um")
 }
-record(ai, "$(P1)_Y:Pos_Raw")
+record(ai, "$(P1):rawY1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:7 ch=1")
 #	field(EGU,"um")
 }
-record(ai, "$(P2)_X:Pos_Raw")
+record(ai, "$(P2):rawX2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:7 ch=2")
 #	field(EGU,"um")
 }
-record(ai, "$(P2)_Y:Pos_Raw")
+record(ai, "$(P2):rawY2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:7 ch=3")
 #	field(EGU,"um")
 }
-record(ai, "$(P1):Vsum_Kmult")
+record(ai, "$(P1):Kmult_Vsum1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:8 ch=0")
 #	field(EGU,"V")
 }
-record(ai, "$(P2):Vsum_Kmult")
+record(ai, "$(P2):Kmult_Vsum2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:8 ch=1")
 #	field(EGU,"V")
 }
-record(bi, "$(P1)_X:Pos_LimitST")
+record(bi, "$(P1):X1Limited")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -347,7 +347,7 @@ record(bi, "$(P1)_X:Pos_LimitST")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bi, "$(P1)_Y:Pos_LimitST")
+record(bi, "$(P1):Y1Limited")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -355,7 +355,7 @@ record(bi, "$(P1)_Y:Pos_LimitST")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bi, "$(P2)_X:Pos_LimitST")
+record(bi, "$(P2):X2Limited")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -363,7 +363,7 @@ record(bi, "$(P2)_X:Pos_LimitST")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bi, "$(P2)_Y:Pos_LimitST")
+record(bi, "$(P2):Y2Limited")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -399,14 +399,14 @@ record(ai, "$(P2):Vb-d2")
 	field(INP,  "@REG:13")
 #	field(EGU,"V")
 }
-record(ai, "$(P1):Vsum")
+record(ai, "$(P1):Vsum1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:14")
 #	field(EGU,"V")
 }
-record(ai, "$(P2):Vsum")
+record(ai, "$(P2):Vsum2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -469,56 +469,56 @@ record(ai, "$(P2):Vb-d_Divide_Vb+d2")
 	field(INP,  "@REG:23")
 #	field(EGU,"V")
 }
-record(ai, "$(P1)_A:Vol")
+record(ai, "$(P1):Va1p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=0")
 	field(EGU,"V")
 }
-record(ai, "$(P1)_B:Vol")
+record(ai, "$(P1):Vb1p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=1")
 	field(EGU,"V")
 }
-record(ai, "$(P1)_C:Vol")
+record(ai, "$(P1):Vc1p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=2")
 	field(EGU,"V")
 }
-record(ai, "$(P1)_D:Vol")
+record(ai, "$(P1):Vd1p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=3")
 	field(EGU,"V")
 }
-record(ai, "$(P2)_A:Vol")
+record(ai, "$(P2):Va2p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=4")
 	field(EGU,"V")
 }
-record(ai, "$(P2)_B:Vol")
+record(ai, "$(P2):Vb2p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=5")
 	field(EGU,"V")
 }
-record(ai, "$(P2)_C:Vol")
+record(ai, "$(P2):Vc2p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:24 ch=6")
 	field(EGU,"V")
 }
-record(ai, "$(P2)_D:Vol")
+record(ai, "$(P2):Vd2p_volt")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -553,35 +553,35 @@ record(ai, "$(P2):Vb-d2p_volt")
 	field(INP,  "@REG:28")
 #	field(EGU,"V")
 }
-record(ai, "$(P1)_X:Pos")
+record(ai, "$(P1):X1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:29 ch=0")
 	field(EGU,"mm")
 }
-record(ai, "$(P1)_Y:Pos")
+record(ai, "$(P1):Y1")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:29 ch=1")
 	field(EGU,"mm")
 }
-record(ai, "$(P2)_X:Pos")
+record(ai, "$(P2):X2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:29 ch=2")
 	field(EGU,"mm")
 }
-record(ai, "$(P2)_Y:Pos")
+record(ai, "$(P2):Y2")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:29 ch=3")
 	field(EGU,"mm")
 }
-record(bi, "$(P):State_100MHzCLK")
+record(bi, "$(P):100MHzCLKState")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -589,7 +589,7 @@ record(bi, "$(P):State_100MHzCLK")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bi, "$(P1):Vsum_LimitST")
+record(bi, "$(P1):Vsum1_Limited")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -597,7 +597,7 @@ record(bi, "$(P1):Vsum_LimitST")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bi, "$(P2):Vsum_LimitST")
+record(bi, "$(P2):Vsum2_Limited")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -613,14 +613,14 @@ record(bi, "$(P):Interlock_Status")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(ai, "$(P1):Phase_Avg")
+record(ai, "$(P1):BPM1Phase_AVG")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
 	field(INP,  "@REG:32")
 	field(EGU,"deg")
 }
-record(ai, "$(P2):Phase_Avg")
+record(ai, "$(P2):BPM2Phase_AVG")
 {
 	field(SCAN, ".5 second")
 	field(DTYP, "BPMmonitor")
@@ -644,7 +644,7 @@ record(bi, "$(P):WRPPSCLK_Err")
 	field(ONAM, "1")
 }
 #######################################
-record(bo, "$(P)_DO1:Opr_OnOff")
+record(bo, "$(P):DO1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:0 ch=0")
@@ -662,7 +662,7 @@ record(bo, "$(P):DO2")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bo, "$(P)_pulsecw:Opr_OnOff")
+record(bo, "$(P):pulsecw")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:1")
@@ -671,7 +671,7 @@ record(bo, "$(P)_pulsecw:Opr_OnOff")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bo, "$(P)_InterExterTrig:Opr_Switch")
+record(bo, "$(P):selectInterOrExterTrig")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:2")
@@ -680,7 +680,7 @@ record(bo, "$(P)_InterExterTrig:Opr_Switch")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bo, "$(P)_HistoryData:Trig")
+record(bo, "$(P):historytrigger")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:3")
@@ -689,7 +689,7 @@ record(bo, "$(P)_HistoryData:Trig")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(bo, "$(P)_HistoryData:Opr_Reset")
+record(bo, "$(P):ResetHistoryData")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:4")
@@ -698,14 +698,14 @@ record(bo, "$(P)_HistoryData:Opr_Reset")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(ao, "$(P):TrigExtractDataRatio_Set")
+record(ao, "$(P):TriggerExtractDataRatio")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:5")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P):HistoryExtractDataRatio_Set")
+record(ao, "$(P):HistoryExtractDataRatio")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:6")
@@ -787,175 +787,175 @@ record(bo, "$(P):SyncSignOfIQsignal")
 # 	field(ONAM, "On")
 # }
 ###############BPM settings.###############
-record(ao, "$(P1)_A:K1_Set")
+record(ao, "$(P1):Set1-Ka1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=0")
 	field(PINI, "YES")
-	field(VAL, "0.00247555")
+	field(VAL, "0.00256651")
 }
-record(ao, "$(P1)_B:K1_Set")
+record(ao, "$(P1):Set1-Kb1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=1")
 	field(PINI, "YES")
-	field(VAL, "0.0023749")
+	field(VAL, "0.0024737")
 }
-record(ao, "$(P1)_C:K1_Set")
+record(ao, "$(P1):Set1-Kc1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=2")
 	field(PINI, "YES")
-	field(VAL, "0.00243402")
+	field(VAL, "0.00243022")
 }
-record(ao, "$(P1)_D:K1_Set")
+record(ao, "$(P1):Set1-Kd1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=3")
 	field(PINI, "YES")
-	field(VAL, "0.0024875")
+	field(VAL, "0.00244703")
 }
-record(ao, "$(P2)_A:K1_Set")
+record(ao, "$(P2):Set2-Ka1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=4")
 	field(PINI, "YES")
-	field(VAL, "0.00251404")
+	field(VAL, "0.00248365")
 }
-record(ao, "$(P2)_B:K1_Set")
+record(ao, "$(P2):Set2-Kb1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=5")
 	field(PINI, "YES")
-	field(VAL, "0.00252111")
+	field(VAL, "0.00255898")
 }
-record(ao, "$(P2)_C:K1_Set")
+record(ao, "$(P2):Set2-Kc1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=6")
 	field(PINI, "YES")
-	field(VAL, "0.00248802")
+	field(VAL, "0.0024327")
 }
-record(ao, "$(P2)_D:K1_Set")
+record(ao, "$(P2):Set2-Kd1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:10 ch=7")
 	field(PINI, "YES")
-	field(VAL, "0.00245692")
+	field(VAL, "0.00239912")
 }
-record(ao, "$(P1)_A:K2_Set")
+record(ao, "$(P1):Set1-Ka2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=0")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P1)_B:K2_Set")
+record(ao, "$(P1):Set1-Kb2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=1")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P1)_C:K2_Set")
+record(ao, "$(P1):Set1-Kc2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=2")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P1)_D:K2_Set")
+record(ao, "$(P1):Set1-Kd2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=3")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P2)_A:K2_Set")
+record(ao, "$(P2):Set2-Ka2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=4")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P2)_B:K2_Set")
+record(ao, "$(P2):Set2-Kb2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=5")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P2)_C:K2_Set")
+record(ao, "$(P2):Set2-Kc2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=6")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P2)_D:K2_Set")
+record(ao, "$(P2):Set2-Kd2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:11 ch=7")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P1)_A:K3_Set")
+record(ao, "$(P1):Set1-Ka3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=0")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P1)_B:K3_Set")
+record(ao, "$(P1):Set1-Kb3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=1")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P1)_C:K3_Set")
+record(ao, "$(P1):Set1-Kc3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=2")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P1)_D:K3_Set")
+record(ao, "$(P1):Set1-Kd3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=3")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P2)_A:K3_Set")
+record(ao, "$(P2):Set2-Ka3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=4")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P2)_B:K3_Set")
+record(ao, "$(P2):Set2-Kb3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=5")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P2)_C:K3_Set")
+record(ao, "$(P2):Set2-Kc3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=6")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P2)_D:K3_Set")
+record(ao, "$(P2):Set2-Kd3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:12 ch=7")
 	field(PINI, "YES")
 	field(VAL, "1")
 }
-record(ao, "$(P1)_A:PhaseOffset_Set")
+record(ao, "$(P1):PH_Offset1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=0")
@@ -963,109 +963,109 @@ record(ao, "$(P1)_A:PhaseOffset_Set")
 #	field(VAL, "0")
 	field(EGU,"deg")
 }
-record(ao, "$(P1)_B:PhaseOffset_Set")
+record(ao, "$(P1):PH_Offset2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=1")
 	field(PINI, "YES")
-	field(VAL, "-5.20")
+	field(VAL, "-6.10")
 	field(EGU,"deg")
 }
-record(ao, "$(P1)_C:PhaseOffset_Set")
+record(ao, "$(P1):PH_Offset3")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=2")
 	field(PINI, "YES")
-	field(VAL, "-6.10")
+	field(VAL, "-7.60")
 	field(EGU,"deg")
 }
-record(ao, "$(P1)_D:PhaseOffset_Set")
+record(ao, "$(P1):PH_Offset4")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=3")
 	field(PINI, "YES")
-	field(VAL, "-3.50")
+	field(VAL, "-6.70")
 	field(EGU,"deg")
 }
-record(ao, "$(P2)_A:PhaseOffset_Set")
+record(ao, "$(P2):PH_Offset5")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=4")
 	field(PINI, "YES")
-	field(VAL, "11.20")
+	field(VAL, "76.9")
 	field(EGU,"deg")
 }
-record(ao, "$(P2)_B:PhaseOffset_Set")
+record(ao, "$(P2):PH_Offset6")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=5")
 	field(PINI, "YES")
-	field(VAL, "8.50")
+	field(VAL, "75.5")
 	field(EGU,"deg")
 }
-record(ao, "$(P2)_C:PhaseOffset_Set")
+record(ao, "$(P2):PH_Offset7")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=6")
 	field(PINI, "YES")
-	field(VAL, "9.80")
+	field(VAL, "76.2")
 	field(EGU,"deg")
 }
-record(ao, "$(P2)_D:PhaseOffset_Set")
+record(ao, "$(P2):PH_Offset8")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:13 ch=7")
 	field(PINI, "YES")
-	field(VAL, "14.10")
+	field(VAL, "78.2")
 	field(EGU,"deg")
 }
-record(ao, "$(P1)_X:K_Set")
+record(ao, "$(P1):SetKx1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:14 ch=0")
 	field(PINI, "YES")
-	field(VAL, "10.775")
+	field(VAL, "18.191")
 	field(EGU,"mm")
 }
-record(ao, "$(P1)_Y:K_Set")
+record(ao, "$(P1):SetKy1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:14 ch=1")
 	field(PINI, "YES")
-	field(VAL, "10.684")
+	field(VAL, "18.192")
 	field(EGU,"mm")
 }
-record(ao, "$(P2)_X:K_Set")
+record(ao, "$(P2):SetKx2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:14 ch=2")
 	field(PINI, "YES")
-	field(VAL, "18.211")
+	field(VAL, "11.227")
 	field(EGU,"mm")
 }
-record(ao, "$(P2)_Y:K_Set")
+record(ao, "$(P2):SetKy2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:14 ch=3")
 	field(PINI, "YES")
-	field(VAL, "18.215")
+	field(VAL, "11.146")
 	field(EGU,"mm")
 }
-record(ao, "$(P1):Ksum_Set")
+record(ao, "$(P1):SetKsum1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:14 ch=4")
 #	field(PINI, "YES")
 #	field(VAL, "0")
 }
-record(ao, "$(P2):Ksum_Set")
+record(ao, "$(P2):SetKsum2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:14 ch=5")
 #	field(PINI, "YES")
 #	field(VAL, "0")
 }
-record(ao, "$(P1)_X:PosOffset_Set")
+record(ao, "$(P1):SetX1_offset")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:15 ch=0")
@@ -1073,7 +1073,7 @@ record(ao, "$(P1)_X:PosOffset_Set")
 #	field(VAL, "0")
 	field(EGU,"mm")
 }
-record(ao, "$(P1)_Y:PosOffset_Set")
+record(ao, "$(P1):SetY1_offset")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:15 ch=1")
@@ -1081,7 +1081,7 @@ record(ao, "$(P1)_Y:PosOffset_Set")
 #	field(VAL, "0")
 	field(EGU,"mm")
 }
-record(ao, "$(P2)_X:PosOffset_Set")
+record(ao, "$(P2):SetX2_offset")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:15 ch=2")
@@ -1089,7 +1089,7 @@ record(ao, "$(P2)_X:PosOffset_Set")
 #	field(VAL, "0")
 	field(EGU,"mm")
 }
-record(ao, "$(P2)_Y:PosOffset_Set")
+record(ao, "$(P2):SetY2_offset")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:15 ch=3")
@@ -1097,21 +1097,21 @@ record(ao, "$(P2)_Y:PosOffset_Set")
 #	field(VAL, "0")
 	field(EGU,"mm")
 }
-record(ao, "$(P1):VsumOffset_Set")
+record(ao, "$(P1):SetSum1_offset")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:15 ch=4")
 #	field(PINI, "YES")
 #	field(VAL, "0")
 }
-record(ao, "$(P2):VsumOffset_Set")
+record(ao, "$(P2):SetSum2_offset")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:15 ch=5")
 #	field(PINI, "YES")
 #	field(VAL, "0")
 }
-record(ao, "$(P1)_X:PosDirLimit_Set")
+record(ao, "$(P1):SetX1_Limit1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=0")
@@ -1119,7 +1119,7 @@ record(ao, "$(P1)_X:PosDirLimit_Set")
 	field(VAL, "100000")
 	field(EGU,"um")
 }
-record(ao, "$(P1)_X:NegDirLimit_Set")
+record(ao, "$(P1):SetX1_Limit2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=1")
@@ -1127,7 +1127,7 @@ record(ao, "$(P1)_X:NegDirLimit_Set")
 	field(VAL, "-100000")
 	field(EGU,"um")
 }
-record(ao, "$(P1)_Y:PosDirLimit_Set")
+record(ao, "$(P1):SetY1_Limit1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=2")
@@ -1135,7 +1135,7 @@ record(ao, "$(P1)_Y:PosDirLimit_Set")
 	field(VAL, "100000")
 	field(EGU,"um")
 }
-record(ao, "$(P1)_Y:NegDirLimit_Set")
+record(ao, "$(P1):SetY1_Limit2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=3")
@@ -1143,7 +1143,7 @@ record(ao, "$(P1)_Y:NegDirLimit_Set")
 	field(VAL, "-100000")
 	field(EGU,"um")
 }
-record(ao, "$(P2)_X:PosDirLimit_Set")
+record(ao, "$(P2):SetX2_Limit1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=4")
@@ -1151,7 +1151,7 @@ record(ao, "$(P2)_X:PosDirLimit_Set")
 	field(VAL, "100000")
 	field(EGU,"um")
 }
-record(ao, "$(P2)_X:NegDirLimit_Set")
+record(ao, "$(P2):SetX2_Limit2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=5")
@@ -1159,7 +1159,7 @@ record(ao, "$(P2)_X:NegDirLimit_Set")
 	field(VAL, "-100000")
 	field(EGU,"um")
 }
-record(ao, "$(P2)_Y:PosDirLimit_Set")
+record(ao, "$(P2):SetY2_Limit1")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=6")
@@ -1167,7 +1167,7 @@ record(ao, "$(P2)_Y:PosDirLimit_Set")
 	field(VAL, "100000")
 	field(EGU,"um")
 }
-record(ao, "$(P2)_Y:NegDirLimit_Set")
+record(ao, "$(P2):SetY2_Limit2")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:16 ch=7")
@@ -1175,14 +1175,14 @@ record(ao, "$(P2)_Y:NegDirLimit_Set")
 	field(VAL, "-100000")
 	field(EGU,"um")
 }
-record(bo, "$(P)_FastInterlock:Opr_Reset")
+record(bo, "$(P):ResetFastInterlock")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:17")
 	field(ZNAM, "False")
 	field(ONAM, "True")
 }
-record(ao, "$(P1):VsumLimit_Set")
+record(ao, "$(P1):SetVsum1_Limit")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:18 ch=0")
@@ -1190,7 +1190,7 @@ record(ao, "$(P1):VsumLimit_Set")
 	field(VAL, "200000")
 #	field(EGU,"mv")
 }
-record(ao, "$(P2):VsumLimit_Set")
+record(ao, "$(P2):SetVsum2_Limit")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:18 ch=1")
@@ -1198,7 +1198,7 @@ record(ao, "$(P2):VsumLimit_Set")
 	field(VAL, "200000")
 #	field(EGU,"mv")
 }
-record(bo, "$(P)_PulseMode:Opr_OnOff")
+record(bo, "$(P):PulseModeOn")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:19")
@@ -1207,21 +1207,21 @@ record(bo, "$(P)_PulseMode:Opr_OnOff")
 	field(ZNAM, "Off")
 	field(ONAM, "On")
 }
-record(ao, "$(P):AVGStartPos_Set")
+record(ao, "$(P):SetAVGStartPosition")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:20")
 	field(PINI, "YES")
 	field(VAL, "0")
 }
-record(ao, "$(P):AVGStopPos_Set")
+record(ao, "$(P):SetAVGStopPosition")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:21")
 	field(PINI, "YES")
 	field(VAL, "200")
 }
-record(ao, "$(P):IntlkFilterTime_Set")
+record(ao, "$(P):SetIntlkFilterTime")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:22")
@@ -1229,7 +1229,7 @@ record(ao, "$(P):IntlkFilterTime_Set")
 	field(VAL, "2")
 	field(EGU,"us")
 }
-record(ao, "$(P):DDSMode_Set")
+record(ao, "$(P):SetDDSMode")
 {
 	field(DTYP, "BPMmonitor")
 	field(OUT,  "@REG:23")
@@ -1264,7 +1264,7 @@ record(bo, "$(P):SMATTLOrWRTrigger")
 	field(ONAM, "On")
 }
 ##########################################
-record(waveform,"$(P)_wf:TrigADC03_Raw")
+record(waveform,"$(P):triggerADC3rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1273,7 +1273,7 @@ record(waveform,"$(P)_wf:TrigADC03_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC04_Raw")
+record(waveform,"$(P):triggerADC4rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1281,7 +1281,7 @@ record(waveform,"$(P)_wf:TrigADC04_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC05_Raw")
+record(waveform,"$(P):triggerADC5rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1289,7 +1289,7 @@ record(waveform,"$(P)_wf:TrigADC05_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC06_Raw")
+record(waveform,"$(P):triggerADC6rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1297,7 +1297,7 @@ record(waveform,"$(P)_wf:TrigADC06_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC07_Raw")
+record(waveform,"$(P):triggerADC7rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1305,7 +1305,7 @@ record(waveform,"$(P)_wf:TrigADC07_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC08_Raw")
+record(waveform,"$(P):triggerADC8rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1313,7 +1313,7 @@ record(waveform,"$(P)_wf:TrigADC08_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC09_Raw")
+record(waveform,"$(P):triggerADC9rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1321,7 +1321,7 @@ record(waveform,"$(P)_wf:TrigADC09_Raw")
 	field(NELM,"40000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:TrigADC10_Raw")
+record(waveform,"$(P):triggerADC10rawdata")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1345,7 +1345,7 @@ record(waveform,"$(P)_wf:TrigADC10_Raw")
 # 	field(NELM,"13000")
 # 	field(FTVL,"FLOAT")
 # }
-record(waveform,"$(P1)_A_wf:TrigAmp_Vol")
+record(waveform,"$(P1):triggerAmp3_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1353,7 +1353,7 @@ record(waveform,"$(P1)_A_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_B_wf:TrigAmp_Vol")
+record(waveform,"$(P1):triggerAmp4_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1361,7 +1361,7 @@ record(waveform,"$(P1)_B_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_C_wf:TrigAmp_Vol")
+record(waveform,"$(P1):triggerAmp5_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1369,7 +1369,7 @@ record(waveform,"$(P1)_C_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_D_wf:TrigAmp_Vol")
+record(waveform,"$(P1):triggerAmp6_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1377,7 +1377,7 @@ record(waveform,"$(P1)_D_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_A_wf:TrigAmp_Vol")
+record(waveform,"$(P2):triggerAmp7_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1385,7 +1385,7 @@ record(waveform,"$(P2)_A_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_B_wf:TrigAmp_Vol")
+record(waveform,"$(P2):triggerAmp8_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1393,7 +1393,7 @@ record(waveform,"$(P2)_B_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_C_wf:TrigAmp_Vol")
+record(waveform,"$(P2):triggerAmp9_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1401,7 +1401,7 @@ record(waveform,"$(P2)_C_wf:TrigAmp_Vol")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_D_wf:TrigAmp_Vol")
+record(waveform,"$(P2):triggerAmp10_volt")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1489,7 +1489,7 @@ record(waveform,"$(P2)_D_wf:TrigAmp_Vol")
 # 	field(NELM,"10000")
 # 	field(FTVL,"FLOAT")
 # }
-record(waveform,"$(P1)_A_wf:TrigPhase")
+record(waveform,"$(P1):triggerPhase3")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1497,7 +1497,7 @@ record(waveform,"$(P1)_A_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_B_wf:TrigPhase")
+record(waveform,"$(P1):triggerPhase4")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1505,7 +1505,7 @@ record(waveform,"$(P1)_B_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_C_wf:TrigPhase")
+record(waveform,"$(P1):triggerPhase5")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1513,7 +1513,7 @@ record(waveform,"$(P1)_C_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_D_wf:TrigPhase")
+record(waveform,"$(P1):triggerPhase6")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1521,7 +1521,7 @@ record(waveform,"$(P1)_D_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_A_wf:TrigPhase")
+record(waveform,"$(P2):triggerPhase7")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1529,7 +1529,7 @@ record(waveform,"$(P2)_A_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_B_wf:TrigPhase")
+record(waveform,"$(P2):triggerPhase8")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1537,7 +1537,7 @@ record(waveform,"$(P2)_B_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_C_wf:TrigPhase")
+record(waveform,"$(P2):triggerPhase9")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1545,7 +1545,7 @@ record(waveform,"$(P2)_C_wf:TrigPhase")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_D_wf:TrigPhase")
+record(waveform,"$(P2):triggerPhase10")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1569,7 +1569,7 @@ record(waveform,"$(P2)_D_wf:TrigPhase")
 # 	field(NELM,"10000")
 # 	field(FTVL,"FLOAT")
 # }
-record(waveform,"$(P)_wf:HistoryRFIn03Amp_Raw")
+record(waveform,"$(P):historyRFIn3RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1577,7 +1577,7 @@ record(waveform,"$(P)_wf:HistoryRFIn03Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn04Amp_Raw")
+record(waveform,"$(P):historyRFIn4RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1585,7 +1585,7 @@ record(waveform,"$(P)_wf:HistoryRFIn04Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn05Amp_Raw")
+record(waveform,"$(P):historyRFIn5RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1593,7 +1593,7 @@ record(waveform,"$(P)_wf:HistoryRFIn05Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn06Amp_Raw")
+record(waveform,"$(P):historyRFIn6RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1601,7 +1601,7 @@ record(waveform,"$(P)_wf:HistoryRFIn06Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn07Amp_Raw")
+record(waveform,"$(P):historyRFIn7RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1609,7 +1609,7 @@ record(waveform,"$(P)_wf:HistoryRFIn07Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn08Amp_Raw")
+record(waveform,"$(P):historyRFIn8RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1617,7 +1617,7 @@ record(waveform,"$(P)_wf:HistoryRFIn08Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn09Amp_Raw")
+record(waveform,"$(P):historyRFIn9RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1625,7 +1625,7 @@ record(waveform,"$(P)_wf:HistoryRFIn09Amp_Raw")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryRFIn10Amp_Raw")
+record(waveform,"$(P):historyRFIn10RawAmp")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1649,7 +1649,7 @@ record(waveform,"$(P)_wf:HistoryRFIn10Amp_Raw")
 # 	field(NELM,"50000")
 # 	field(FTVL,"FLOAT")
 # }
-record(waveform,"$(P)_wf:HistoryPhase03")
+record(waveform,"$(P):historyPhase3")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1657,7 +1657,7 @@ record(waveform,"$(P)_wf:HistoryPhase03")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase04")
+record(waveform,"$(P):historyPhase4")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1665,7 +1665,7 @@ record(waveform,"$(P)_wf:HistoryPhase04")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase05")
+record(waveform,"$(P):historyPhase5")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1673,7 +1673,7 @@ record(waveform,"$(P)_wf:HistoryPhase05")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase06")
+record(waveform,"$(P):historyPhase6")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1681,7 +1681,7 @@ record(waveform,"$(P)_wf:HistoryPhase06")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase07")
+record(waveform,"$(P):historyPhase7")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1689,7 +1689,7 @@ record(waveform,"$(P)_wf:HistoryPhase07")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase08")
+record(waveform,"$(P):historyPhase8")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1697,7 +1697,7 @@ record(waveform,"$(P)_wf:HistoryPhase08")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase09")
+record(waveform,"$(P):historyPhase9")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1705,7 +1705,7 @@ record(waveform,"$(P)_wf:HistoryPhase09")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryPhase10")
+record(waveform,"$(P):historyPhase10")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1729,7 +1729,7 @@ record(waveform,"$(P)_wf:HistoryPhase10")
 # 	field(NELM,"50000")
 # 	field(FTVL,"FLOAT")
 # }
-record(waveform,"$(P1)_X_wf:Pos")
+record(waveform,"$(P1):X1wf")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1737,7 +1737,7 @@ record(waveform,"$(P1)_X_wf:Pos")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_Y_wf:Pos")
+record(waveform,"$(P1):Y1wf")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1745,7 +1745,7 @@ record(waveform,"$(P1)_Y_wf:Pos")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_X_wf:Pos")
+record(waveform,"$(P2):X2wf")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1753,7 +1753,7 @@ record(waveform,"$(P2)_X_wf:Pos")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_Y_wf:Pos")
+record(waveform,"$(P2):Y2wf")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1761,7 +1761,7 @@ record(waveform,"$(P2)_Y_wf:Pos")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P1)_wf:Vsum")
+record(waveform,"$(P1):Vsum1wf")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1769,7 +1769,7 @@ record(waveform,"$(P1)_wf:Vsum")
 	field(NELM,"10000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P2)_wf:Vsum")
+record(waveform,"$(P2):Vsum2wf")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTrigWave")
@@ -1841,7 +1841,7 @@ record(waveform,"$(P2)_wf:Vsum")
 # 	field(NELM,"50000")
 # 	field(FTVL,"FLOAT")
 # }
-record(waveform,"$(P)_wf:HistoryX1")
+record(waveform,"$(P):historyX1")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1849,7 +1849,7 @@ record(waveform,"$(P)_wf:HistoryX1")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryY1")
+record(waveform,"$(P):historyY1")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1857,7 +1857,7 @@ record(waveform,"$(P)_wf:HistoryY1")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryX2")
+record(waveform,"$(P):historyX2")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1865,7 +1865,7 @@ record(waveform,"$(P)_wf:HistoryX2")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryY2")
+record(waveform,"$(P):historyY2")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1873,7 +1873,7 @@ record(waveform,"$(P)_wf:HistoryY2")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryVsum1")
+record(waveform,"$(P):historyVsum1")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
@@ -1881,7 +1881,7 @@ record(waveform,"$(P)_wf:HistoryVsum1")
 	field(NELM,"100000")
 	field(FTVL,"FLOAT")
 }
-record(waveform,"$(P)_wf:HistoryVsum2")
+record(waveform,"$(P):historyVsum2")
 {
 	field(SCAN,"I/O Intr")
 	field(DTYP,"BPMmonitorTripWave")
