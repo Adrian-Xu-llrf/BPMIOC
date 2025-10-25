@@ -112,6 +112,22 @@ static float Y1_avg=0;
 static float X2_avg=0;
 static float Y2_avg=0;
 
+// RF amplitude voltage average calculation parameters (shared by all RF channels)
+static int SignalStart=0;      // Signal waveform start point
+static int SignalStop=0;       // Signal waveform stop point
+static int BaselineStart=0;    // Baseline waveform start point
+static int BaselineStop=0;     // Baseline waveform stop point
+
+// Average voltage results for each RF channel (signal_avg - baseline_avg)
+static float rf3amp_avg=0;
+static float rf4amp_avg=0;
+static float rf5amp_avg=0;
+static float rf6amp_avg=0;
+static float rf7amp_avg=0;
+static float rf8amp_avg=0;
+static float rf9amp_avg=0;
+static float rf10amp_avg=0;
+
 static float ph_ch3=0;
 static float ph_offset3=0;
 static float ph_ch4=0;
@@ -540,6 +556,22 @@ float ReadData(int offset, int channel, int type)
 			{
 				return ((ph_ch8+ph_ch9+ph_ch10)/3);
 			}
+		case 34:
+			return rf3amp_avg;
+		case 35:
+			return rf4amp_avg;
+		case 36:
+			return rf5amp_avg;
+		case 37:
+			return rf6amp_avg;
+		case 38:
+			return rf7amp_avg;
+		case 39:
+			return rf8amp_avg;
+		case 40:
+			return rf9amp_avg;
+		case 41:
+			return rf10amp_avg;
 		case 93:
 			return funcGetWRStatus(channel);
 		default:
@@ -677,8 +709,20 @@ void SetReg(int offset, int channel, float val)
 		case 26:
 			SelectTriggerSource(val_tmp);
 			break;
+		case 27:
+			SignalStart = val_tmp;
+			break;
+		case 28:
+			SignalStop = val_tmp;
+			break;
+		case 29:
+			BaselineStart = val_tmp;
+			break;
+		case 30:
+			BaselineStop = val_tmp;
+			break;
 		default:
-			printf("Call SetReg function with Unknown offset value.\n");	
+			printf("Call SetReg function with Unknown offset value.\n");
 			break;
 	}
 }
@@ -956,11 +1000,55 @@ void readWaveform(int offset, int ch_N, unsigned int nelem, float* data, long lo
 static void copyArray(float *dmaBuf, float *wfBuf, int ch_N, int length)
 {
 	int i;
+	float signal_sum = 0;
+	float baseline_sum = 0;
+	int signal_points = 0;
+	int baseline_points = 0;
+	float voltage;
+
 //	funcGetTriggerChannelData(ch_N, dmaBuf);
 	funcGetTriggerAllData(1, ch_N, dmaBuf);
 	for(i=0; i<length; ++i){
-		wfBuf[i] = ((float)dmaBuf[i] / 1.28E+6) * sqrt(2);
+		voltage = ((float)dmaBuf[i] / 1.28E+6) * sqrt(2);
+		wfBuf[i] = voltage;
+
+		// Calculate signal average
+		if(i >= SignalStart && i <= SignalStop)
+		{
+			signal_sum += voltage;
+			signal_points++;
+		}
+
+		// Calculate baseline average
+		if(i >= BaselineStart && i <= BaselineStop)
+		{
+			baseline_sum += voltage;
+			baseline_points++;
+		}
 	}
+
+	// Calculate average voltage (signal_avg - baseline_avg) for each channel
+	float signal_avg = (signal_points > 0) ? (signal_sum / signal_points) : 0;
+	float baseline_avg = (baseline_points > 0) ? (baseline_sum / baseline_points) : 0;
+
+	// Store result based on channel number
+	// ch_N mapping: RF3=0, RF4=2, RF5=4, RF6=6, RF7=8, RF8=10, RF9=12, RF10=14
+	if(ch_N == 0)
+		rf3amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 2)
+		rf4amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 4)
+		rf5amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 6)
+		rf6amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 8)
+		rf7amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 10)
+		rf8amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 12)
+		rf9amp_avg = signal_avg - baseline_avg;
+	else if(ch_N == 14)
+		rf10amp_avg = signal_avg - baseline_avg;
 }
 
 static void copyPhArray(float *dmaBuf, float *wfBuf, int ch_N, int length)
