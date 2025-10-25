@@ -1,0 +1,104 @@
+###############新增：波形平均电压计算相关PV###############
+
+# 本底波形范围设置
+record(ao, "$(P):SetBaselineStartPosition")
+{
+    field(DTYP, "BPMmonitor")
+    field(OUT,  "@REG:27")
+    field(PINI, "YES")
+    field(VAL, "0")
+    field(DESC, "Baseline start point")
+    field(EGU, "point")
+}
+
+record(ao, "$(P):SetBaselineStopPosition")
+{
+    field(DTYP, "BPMmonitor")
+    field(OUT,  "@REG:28")
+    field(PINI, "YES")
+    field(VAL, "50")
+    field(DESC, "Baseline stop point")
+    field(EGU, "point")
+}
+
+# BPM1 的 RF3-6 平均电压（有效信号 - 本底）
+record(ai, "$(P1):RFIn_03_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=0")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF3 avg voltage (signal-baseline)")
+}
+
+record(ai, "$(P1):RFIn_04_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=1")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF4 avg voltage")
+}
+
+record(ai, "$(P1):RFIn_05_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=2")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF5 avg voltage")
+}
+
+record(ai, "$(P1):RFIn_06_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=3")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF6 avg voltage")
+}
+
+# BPM2 的 RF7-10 平均电压
+record(ai, "$(P2):RFIn_07_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=4")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF7 avg voltage")
+}
+
+record(ai, "$(P2):RFIn_08_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=5")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF8 avg voltage")
+}
+
+record(ai, "$(P2):RFIn_09_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=6")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF9 avg voltage")
+}
+
+record(ai, "$(P2):RFIn_10_AvgVolt")
+{
+    field(SCAN, "I/O Intr")
+    field(DTYP, "BPMmonitor")
+    field(INP,  "@REG:34 ch=7")
+    field(EGU, "V")
+    field(PREC, "6")
+    field(DESC, "RF10 avg voltage")
+}

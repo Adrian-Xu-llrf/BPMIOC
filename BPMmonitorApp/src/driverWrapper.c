@@ -107,6 +107,19 @@ static int pulseMode=0;
 static int AVGStart=0;
 static int AVGStop=0;
 
+static int BackGroundStart=0;
+static int BackGroundStop=0;
+
+static int rf4_avg_volt=0;
+static int rf5_avg_volt=0;
+static int rf6_avg_volt=0;
+static int rf7_avg_volt=0;
+static int rf8_avg_volt=0;
+static int rf9_avg_volt=0;
+static int rf10_avg_volt=0;
+
+
+
 static float X1_avg=0;
 static float Y1_avg=0;
 static float X2_avg=0;
@@ -197,6 +210,9 @@ static void (*funcGetTimestampData)(int ch, long long *tm_utc, int *pps);
 static void (*funcSetFreqControlWordtoDDS)(int value);
 static void (*funcSetSelectExternelTrigger)(int value);
 static void SetSysTime(void);
+
+// calculate average voltage of each channel
+static void calcuateAvgVoltage(float *wfBuf, int ch_N, int length)
 
 static long InitDevice()
 {
@@ -540,6 +556,20 @@ float ReadData(int offset, int channel, int type)
 			{
 				return ((ph_ch8+ph_ch9+ph_ch10)/3);
 			}
+		case 34:
+			switch(channel){
+				case 0:return rf3_avg_volt;
+				case 1:return rf4_avg_volt;
+				case 2:return rf5_avg_volt;
+				case 3:return rf6_avg_volt;
+				case 4:return rf7_avg_volt;
+				case 5:return rf8_avg_volt;
+				case 6:return rf9_avg_volt;
+				case 7:return rf10_avg_volt;
+				default: return 0;
+
+
+			}
 		case 93:
 			return funcGetWRStatus(channel);
 		default:
@@ -677,6 +707,12 @@ void SetReg(int offset, int channel, float val)
 		case 26:
 			SelectTriggerSource(val_tmp);
 			break;
+		case 27:
+			BackGroundStart(val_tmp);
+			break;
+		case 28:
+			BackGroundStop(val_tmp);
+			break;
 		default:
 			printf("Call SetReg function with Unknown offset value.\n");	
 			break;
@@ -725,34 +761,42 @@ void readWaveform(int offset, int ch_N, unsigned int nelem, float* data, long lo
 //			break;
 		case 11:
 			copyArray(rf3amp, data, 0, nelem);
+			calculateAvgVoltage(data,0,nelem);
 //			funcGetTriggerAllData(1, 0, data);
 			break;
 		case 12:
 			copyArray(rf4amp, data, 2, nelem);
+			calculateAvgVoltage(data,2,nelem);
 //			funcGetTriggerAllData(1, 2, data);
 			break;
 		case 13:
 			copyArray(rf5amp, data, 4, nelem);
+			calculateAvgVoltage(data,4,nelem);
 //			funcGetTriggerAllData(1, 4, data);
 			break;
 		case 14:
 			copyArray(rf6amp, data, 6, nelem);
+			calculateAvgVoltage(data,6,nelem);
 //			funcGetTriggerAllData(1, 6, data);
 			break;
 		case 15:
 			copyArray(rf7amp, data, 8, nelem);
+			calculateAvgVoltage(data,8,nelem);
 //			funcGetTriggerAllData(1, 8, data);
 			break;
 		case 16:
 			copyArray(rf8amp, data, 10, nelem);
+			calculateAvgVoltage(data,10,nelem);
 //			funcGetTriggerAllData(1, 10, data);
 			break;
 		case 17:
 			copyArray(rf9amp, data, 12, nelem);
+			calculateAvgVoltage(data,12,nelem);
 //			funcGetTriggerAllData(1, 12, data);
 			break;
 		case 18:
 			copyArray(rf10amp, data, 14, nelem);
+			calculateAvgVoltage(data,14,nelem);
 //			funcGetTriggerAllData(1, 14, data);
 			break;
 //		case 19:
@@ -1447,4 +1491,50 @@ static void GetSysTime(void)
 	char cur_time[20];
 	snprintf(cur_time,20,"%d-%02d-%02d %02d:%02d:%02d",cur_tm.tm_year+1900,cur_tm.tm_mon+1,cur_tm.tm_mday,cur_tm.tm_hour,cur_tm.tm_min,cur_tm.tm_sec);
 	printf("%s ",cur_time);		
+}
+
+
+static void calcuateAvgVoltage(float *wfBuf, int ch_N, int length)
+{
+	int i=0;
+	float signal_sum = 0;  // sum of effective signal
+	float background_sum = 0; // sum of background signal
+	int signal_count = 0; // count of effective signal
+	int background_count = 0; // count of background signal
+	float avg_volt = 0; // average voltage
+
+	for (i=0;i<length;i++){
+		if(i>=AVGStart && i<=AVGStop){
+			signal_sum += wfBuf[i];
+
+		}
+		if(i>=BackGroundStart && i<=BackGroundStop)
+		{
+			background_sum += wfBuf[i];
+
+		}	
+	}
+	signal_count = AVGStop - AVGStart + 1;
+	background_count = BackGroundStop - BackGroundStart + 1;
+
+	if (signal_count > 0 && background_count > 0){
+		avg_volt = signal_sum / signal_count - background_sum / background_count;
+
+	}
+	else{
+		avg_volt = 0;
+	}
+
+	switch(ch_N){
+		case 0: rf3_avg_volt = avg_volt; break;
+		case 2: rf4_avg_volt = avg_volt; break;
+		case 4: rf5_avg_volt = avg_volt; break;
+		case 6: rf6_avg_volt = avg_volt; break;
+		case 8: rf7_avg_volt = avg_volt; break;
+		case 10: rf8_avg_volt = avg_volt; break;
+		case 12: rf9_avg_volt = avg_volt; break;
+		case 14: rf10_avg_volt = avg_volt; break;
+	
+	}
+	
 }
