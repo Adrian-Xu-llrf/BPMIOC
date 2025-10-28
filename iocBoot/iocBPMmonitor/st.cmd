@@ -10,8 +10,8 @@ dbLoadDatabase("../../dbd/BPMmonitor.dbd",0,0)
 BPMmonitor_registerRecordDeviceDriver(pdbbase) 
 
 ## Load record instances
-dbLoadRecords("../../db/BPMMonitor.db","P=iLinac_007:BPM6And7, P1=iLinac_007:BPM6, P2=iLinac_007:BPM7")
-dbLoadRecords("../../db/BPMCal.db","P=iLinac_007:BPM6And7, P1=iLinac_007:BPM6, P2=iLinac_007:BPM7")
+dbLoadRecords("../../db/BPMMonitor.db","P=iLinac_007:BPM14And15, P1=iLinac_007:BPM14, P2=iLinac_007:BPM15")
+dbLoadRecords("../../db/BPMCal.db","P=iLinac_007:BPM14And15, P1=iLinac_007:BPM14, P2=iLinac_007:BPM15")
 
 iocInit()
 

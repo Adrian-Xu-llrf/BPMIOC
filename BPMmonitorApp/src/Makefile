@@ -32,13 +32,15 @@ BPMmonitor_SRCS_vxWorks += -nil-
 BPMmonitor_SRCS += driverWrapper.c
 BPMmonitor_SRCS += devBPMMonitor.c
 
-dl_DIR += /home/gao/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/lib
-PROD_LIBS += dl
-pthread_DIR += /home/gao/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/lib
-PROD_LIBS += pthread
-
 # Add support from base/src/vxWorks if needed
 #BPMmonitor_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+
+# --- 修正开始 ---
+# 链接 'dl' 和 'pthread' 作为系统库
+# (我们删除了指向 /home/gao 的错误 _DIR 路径和 PROD_LIBS)
+BPMmonitor_SYS_LIBS += dl
+BPMmonitor_SYS_LIBS += pthread
+# --- 修正结束 ---
 
 # Finally link to the EPICS Base libraries
 BPMmonitor_LIBS += $(EPICS_BASE_IOC_LIBS)
@@ -48,4 +50,3 @@ BPMmonitor_LIBS += $(EPICS_BASE_IOC_LIBS)
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-

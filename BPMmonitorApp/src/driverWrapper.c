@@ -109,7 +109,7 @@ static int AVGStop=0;
 
 static int BackGroundStart=0;
 static int BackGroundStop=0;
-
+static int rf3_avg_volt=0;
 static int rf4_avg_volt=0;
 static int rf5_avg_volt=0;
 static int rf6_avg_volt=0;
@@ -708,10 +708,10 @@ void SetReg(int offset, int channel, float val)
 			SelectTriggerSource(val_tmp);
 			break;
 		case 27:
-			BackGroundStart(val_tmp);
+			BackGroundStart = val_tmp;
 			break;
 		case 28:
-			BackGroundStop(val_tmp);
+			BackGroundStop = val_tmp;
 			break;
 		default:
 			printf("Call SetReg function with Unknown offset value.\n");	
