@@ -21,6 +21,7 @@
 
 #include "mockHardware.h"
 #include "dataGenerator.h"
+#include "fileReplay.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -205,6 +206,35 @@ static void generate_waveform_data(int channel)
 }
 
 /**
+ * 生成文件回放数据
+ */
+static void generate_replay_data(void)
+{
+    // 从文件回放模块获取数据
+    int status = FileReplay_GetNextFrame(g_amp, g_phase, g_power);
+
+    if (status != 0) {
+        // 回放失败，使用正弦波
+        generate_sine_data();
+        return;
+    }
+
+    // BPM和CRI数据（使用简单模型）
+    for (int ch = 0; ch < NUM_CHANNELS; ch++) {
+        // BPM电压/电流
+        g_vbpm[ch] = g_amp[ch] * 0.8;
+        g_ibpm[ch] = g_amp[ch] * 0.05;
+
+        // CRI电压/电流
+        g_vcri[ch] = 5.0 + 0.5 * sin(2.0 * M_PI * 0.2 * g_sim_time);
+        g_icri[ch] = 1.2 + 0.1 * sin(2.0 * M_PI * 0.3 * g_sim_time);
+
+        // 相位设置值
+        g_pset[ch] = (int)(g_phase[ch]);
+    }
+}
+
+/**
  * 更新模拟数据
  */
 static void update_simulation_data(void)
@@ -220,9 +250,8 @@ static void update_simulation_data(void)
             generate_random_data();
             break;
 
-        case 2:  // 文件回放（TODO: 在fileReplay.c中实现）
-            // 暂时使用正弦波
-            generate_sine_data();
+        case 2:  // 文件回放
+            generate_replay_data();
             break;
 
         default:
@@ -274,6 +303,9 @@ int SystemInit(void)
     // 初始化数据生成器
     DataGen_Init();
 
+    // 初始化文件回放模块
+    FileReplay_Init();
+
     // 尝试从配置文件加载
     char *config_file = getenv("BPMIOC_SIM_CONFIG");
     if (config_file != NULL) {
@@ -281,6 +313,22 @@ int SystemInit(void)
             LOG_INFO("Loaded configuration from: %s", config_file);
         } else {
             LOG_INFO("Failed to load config, using defaults");
+        }
+    }
+
+    // 如果是回放模式，加载数据文件
+    if (g_simulation_mode == 2) {
+        char *data_file = getenv("BPMIOC_DATA_FILE");
+        if (data_file != NULL) {
+            if (FileReplay_LoadFile(data_file) == 0) {
+                LOG_INFO("Loaded data file: %s", data_file);
+            } else {
+                LOG_ERROR("Failed to load data file, falling back to sine mode");
+                g_simulation_mode = 0;
+            }
+        } else {
+            LOG_ERROR("BPMIOC_DATA_FILE not set, falling back to sine mode");
+            g_simulation_mode = 0;
         }
     }
 
@@ -774,9 +822,18 @@ int Mock_LoadDataFile(const char *filename)
         return -1;
     }
 
-    // TODO: 在fileReplay.c中实现
-    LOG_INFO("  File replay not yet implemented");
-    return -1;
+    // 使用fileReplay模块加载
+    int status = FileReplay_LoadFile(filename);
+
+    if (status == 0) {
+        LOG_INFO("  File loaded successfully");
+        // 切换到回放模式
+        g_simulation_mode = 2;
+    } else {
+        LOG_ERROR("  Failed to load file");
+    }
+
+    return status;
 }
 
 int Mock_SetFault(int fault_type, int enable)
