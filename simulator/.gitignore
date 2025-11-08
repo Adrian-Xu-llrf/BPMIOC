@@ -1,0 +1,34 @@
+# Compiled binaries
+*.o
+*.so
+*.a
+*.dylib
+
+# Executables
+test_mock
+test_*
+
+# Editor files
+*.swp
+*.swo
+*~
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files (optional - uncomment if you don't want to track large data files)
+#data/*.csv
+#data/*.wfm
