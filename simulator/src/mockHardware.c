@@ -22,6 +22,7 @@
 #include "mockHardware.h"
 #include "dataGenerator.h"
 #include "fileReplay.h"
+#include "faultInjection.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -306,6 +307,9 @@ int SystemInit(void)
     // 初始化文件回放模块
     FileReplay_Init();
 
+    // 初始化故障注入系统
+    FaultInjection_Init();
+
     // 尝试从配置文件加载
     char *config_file = getenv("BPMIOC_SIM_CONFIG");
     if (config_file != NULL) {
@@ -423,8 +427,15 @@ int GetRfInfo(float *Amp, float *Phase, float *Power,
 
     pthread_mutex_unlock(&g_data_mutex);
 
+    // 应用故障注入
+    int faults = FaultInjection_Apply(Amp, Phase, Power, NUM_CHANNELS);
+    if (faults > 0) {
+        LOG_TRACE("  Applied %d fault(s)", faults);
+    }
+
     // 增加模拟时间
     g_sim_time += 0.1;  // 100ms per call
+    FaultInjection_UpdateTime(0.1);
 
     LOG_TRACE("  Ch0: Amp=%.3f, Phase=%.1f, Power=%.1f",
               Amp[0], Phase[0], Power[0]);
@@ -840,9 +851,15 @@ int Mock_SetFault(int fault_type, int enable)
 {
     LOG_INFO("Mock_SetFault: type=%d, enable=%d", fault_type, enable);
 
-    // TODO: 实现故障注入
-    LOG_INFO("  Fault injection not yet implemented");
-    return 0;
+    int status = FaultInjection_SetFault((FaultType)fault_type, enable);
+
+    if (status == 0) {
+        LOG_INFO("  Fault configured successfully");
+    } else {
+        LOG_ERROR("  Failed to configure fault");
+    }
+
+    return status;
 }
 
 int Mock_GetStatistics(char *buffer, int maxlen)

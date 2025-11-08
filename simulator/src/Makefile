@@ -17,8 +17,8 @@ LIBS = -lm -lpthread
 TARGET = libBPMboardMock.so
 
 # 源文件
-SRCS = mockHardware.c dataGenerator.c fileReplay.c
-HEADERS = mockHardware.h dataGenerator.h fileReplay.h
+SRCS = mockHardware.c dataGenerator.c fileReplay.c faultInjection.c
+HEADERS = mockHardware.h dataGenerator.h fileReplay.h faultInjection.h
 
 # 对象文件
 OBJS = $(SRCS:.c=.o)
