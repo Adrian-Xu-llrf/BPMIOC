@@ -4,67 +4,65 @@
 > **难度**: ⭐⭐☆☆☆
 > **预计时间**: 1-3小时（含学习）
 
+## 📖 概述
+
+本部分是BPMIOC学习指南的第一部分，帮助你快速搭建开发环境并运行BPMIOC项目。
+
+主要内容包括：
+- 了解BPMIOC项目的架构和设计理念
+- 从源码安装EPICS Base控制系统框架
+- 配置和编译BPMIOC项目
+- 启用模拟模式，无需真实硬件即可运行和测试
+
+完成本部分后，你将拥有一个可运行的BPMIOC开发环境，为后续深入学习打下基础。
+
 ## 📋 本部分内容
 
 | 文档 | 标题 | 时间 | 重要性 | 说明 |
 |------|------|------|--------|------|
-| [01-introduction.md](./01-introduction.md) | BPMIOC简介 | 10分钟 | ⭐⭐⭐⭐ | BPMIOC是什么 |
-| [02-prerequisites.md](./02-prerequisites.md) | 前置条件 | 5分钟 | ⭐⭐⭐⭐ | 系统要求检查 |
-| [03-install-epics.md](./03-install-epics.md) | 安装EPICS Base | 15分钟 | ⭐⭐⭐⭐⭐ | 详细安装步骤 |
-| [04-clone-and-compile.md](./04-clone-and-compile.md) | 克隆和编译 | 10分钟 | ⭐⭐⭐⭐⭐ | 编译BPMIOC |
-| [05-enable-simulation.md](./05-enable-simulation.md) | 启用模拟模式 | 10分钟 | ⭐⭐⭐⭐⭐ | 无硬件运行 |
-| [06-first-run.md](./06-first-run.md) | 第一次运行 | 5分钟 | ⭐⭐⭐⭐⭐ | 启动IOC |
-| [07-verify-pvs.md](./07-verify-pvs.md) | 验证PV访问 | 10分钟 | ⭐⭐⭐⭐⭐ | 测试PV |
-| [08-troubleshooting.md](./08-troubleshooting.md) | 常见问题 | 按需 | ⭐⭐⭐⭐ | 故障排查 |
-| [09-docker-alternative.md](./09-docker-alternative.md) | Docker部署 | 20分钟 | ⭐⭐⭐ | 可选方案 |
+| [01-introduction.md](./01-introduction.md) | BPMIOC项目简介 | 10分钟 | ⭐⭐⭐⭐ | BPMIOC是什么 |
+| [03-install-epics.md](./03-install-epics.md) | 安装EPICS Base | 20分钟 | ⭐⭐⭐⭐⭐ | 详细安装步骤 |
+| [05-enable-simulation.md](./05-enable-simulation.md) | 启用模拟模式 | 15分钟 | ⭐⭐⭐⭐⭐ | 无硬件运行 |
 
 ## 🎯 学习目标
 
 完成本部分后，你将能够：
+- ✅ 理解BPMIOC项目的结构和目的
 - ✅ 安装并配置EPICS Base
 - ✅ 编译BPMIOC项目
 - ✅ 在模拟模式下运行IOC
-- ✅ 使用CA工具访问PV
-- ✅ 用Python读写PV
-- ✅ 解决常见的编译和运行问题
+- ✅ 理解模拟模式的配置和使用
 
 ## 📖 建议阅读顺序
 
 ### 快速路径（已有EPICS环境）
 ```
-01 → 04 → 05 → 06 → 07
-总时间: 约40分钟
+01 → 05
+总时间: 约25分钟
 ```
 
 ### 标准路径（从零开始）
 ```
-01 → 02 → 03 → 04 → 05 → 06 → 07
-总时间: 约1小时
+01 → 03 → 05
+总时间: 约45分钟
 ```
 
-### 完整路径（包含Docker）
-```
-01 → 02 → 03 → 04 → 05 → 06 → 07 → 09
-遇到问题查看: 08
-总时间: 约2小时
-```
+按顺序阅读所有文档，每个文档都包含实际操作步骤。
 
 ## ✅ 检查清单
 
 在开始之前：
 - [ ] Linux系统（Ubuntu 20.04+ 或 CentOS 7+）
-- [ ] 至少5GB可用磁盘空间
+- [ ] 至少3GB可用磁盘空间
 - [ ] 2GB+内存
-- [ ] 网络连接
-- [ ] sudo权限（安装依赖）
+- [ ] 网络连接（下载EPICS Base和依赖）
+- [ ] sudo权限（安装系统依赖）
 
 完成本部分后：
 - [ ] EPICS Base已安装并配置环境变量
 - [ ] BPMIOC编译成功
-- [ ] IOC能在模拟模式下启动
-- [ ] 能用caget读取PV值
-- [ ] 能用camonitor监控PV变化
-- [ ] 能用Python访问PV
+- [ ] 理解如何启用和配置模拟模式
+- [ ] IOC能在模拟模式下运行
 
 ## 🚦 学习路线
 
@@ -87,14 +85,14 @@ Part 2: 理解基础      ← 下一步
 1. **按顺序阅读**: 文档之间有依赖关系
 2. **动手实践**: 每个步骤都要实际操作
 3. **复制命令**: 可以直接复制文档中的命令
-4. **记录问题**: 遇到问题记录下来，查看08-troubleshooting.md
+4. **记录问题**: 遇到问题记录下来，查看附录FAQ
 5. **不要跳步**: 即使看起来简单，也要执行每个步骤
 
 ## 🐛 遇到问题？
 
-1. **先查看** [08-troubleshooting.md](./08-troubleshooting.md)
-2. **检查系统要求** [02-prerequisites.md](./02-prerequisites.md)
-3. **查看错误日志**: 仔细阅读错误信息
+1. **查看错误日志**: 仔细阅读错误信息
+2. **检查环境变量**: 确认EPICS_BASE等变量已正确设置
+3. **查看FAQ**: [Part 18: 附录/FAQ](../part18-appendix/faq.md)
 4. **Google错误信息**: 复制错误信息搜索
 5. **提Issue**: 在GitHub上提问
 
@@ -108,16 +106,17 @@ Part 2: 理解基础      ← 下一步
 
 ## 🎓 常见问题预告
 
-- ❓ EPICS Base编译失败 → 查看03文档
-- ❓ BPMIOC编译失败 → 查看04文档和08文档
-- ❓ IOC启动但PV访问不到 → 查看07文档
-- ❓ caget命令找不到 → 检查环境变量（03文档）
+- ❓ EPICS Base编译失败 → 查看03文档中的依赖安装
+- ❓ BPMIOC编译失败 → 检查EPICS_BASE环境变量
+- ❓ 模拟模式无法启动 → 查看05文档中的配置说明
+- ❓ caget命令找不到 → 检查PATH环境变量（03文档）
 
 ## 🔗 相关资源
 
-- [QUICK_START.md](../QUICK_START.md) - 更简洁的快速开始
-- [Part 2: 理解基础](../part2-understanding-basics/) - 下一步学习
-- [Part 18: 附录/FAQ](../part18-appendix/faq.md) - 常见问题
+- [QUICK_START.md](../QUICK_START.md) - 更简洁的快速开始指南
+- [Part 2: 理解基础](../part2-understanding-basics/) - 下一步深入学习
+- [Part 18: 附录/FAQ](../part18-appendix/faq.md) - 常见问题解答
+- [Part 18: 快速参考](../part18-appendix/quick-reference.md) - 常用命令速查
 
 ## 📞 获取帮助
 
