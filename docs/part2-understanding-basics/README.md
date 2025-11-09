@@ -170,13 +170,12 @@ Part 3: BPMIOC架构    ← 下一步
 
 ## 🔗 相关资源
 
-### 本部分实践
-- [Part 1: 06-first-run](../part1-quick-reproduction/06-first-run.md) - 运行IOC
-- [Part 1: 07-verify-pvs](../part1-quick-reproduction/07-verify-pvs.md) - 访问PV
+### 前置学习
+- [Part 1: 快速复现](../part1-quick-reproduction/) - 环境搭建和项目运行
 
 ### 进阶学习
 - [Part 3: BPMIOC架构](../part3-bpmioc-architecture/) - 架构详解
-- [Part 8: 基础实验](../part8-hands-on-labs/labs-basic/) - 动手实验
+- [Part 8: 基础实验](../part8-hands-on-labs/) - 动手实验
 
 ### 官方资源
 - [EPICS官网](https://epics-controls.org/)
