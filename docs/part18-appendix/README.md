@@ -147,8 +147,8 @@ grep -i "cannot load" docs/part18-appendix/faq.md
 ### 我想...
 
 - **查找术语定义** → [glossary.md](./glossary.md)
-- **解决编译错误** → [faq.md#编译问题](./faq.md#编译问题)
-- **学习CA工具** → [quick-reference.md#CA工具](./quick-reference.md#ca工具)
+- **解决编译错误** → [faq.md#安装和编译](./faq.md#安装和编译)
+- **学习CA工具** → [quick-reference.md#ca工具](./quick-reference.md#ca工具)
 - **找官方文档** → [resources.md#官方文档](./resources.md#官方文档)
 - **获取代码模板** → [quick-reference.md#代码模板](./quick-reference.md#代码模板)
 
