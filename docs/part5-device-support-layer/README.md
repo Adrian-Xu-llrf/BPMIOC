@@ -26,11 +26,11 @@ Part 5详细分析设备支持层（Device Support Layer），这是连接数据
 | 文档 | 描述 | 状态 |
 |------|------|------|
 | README.md | 本文档 | ✅ |
-| 01-overview.md | 设备支持层概述 | 📝 |
-| 02-dset-structure.md | dset结构详解 | 📝 |
-| 03-init-record.md | init_record实现 | 📝 |
-| 04-read-write.md | read/write函数 | 📝 |
-| 05-devpvt.md | 私有数据结构 | 📝 |
+| 01-overview.md | 设备支持层概述 | ✅ |
+| 02-dset-structure.md | dset结构详解 | ✅ |
+| 03-init-record.md | init_record实现 | ✅ |
+| 04-read-write.md | read/write函数 | ✅ |
+| 05-devpvt.md | 私有数据结构 | ✅ |
 
 ## 🎯 学习要点
 

@@ -27,11 +27,11 @@ Part 6详细分析数据库层，包括.db文件的编写、Record配置、PV命
 | 文档 | 描述 | 状态 |
 |------|------|------|
 | README.md | 本文档 | ✅ |
-| 01-db-file-structure.md | .db文件结构 | 📝 |
-| 02-record-configuration.md | Record配置 | 📝 |
-| 03-pv-naming.md | PV命名规范 | 📝 |
-| 04-scan-mechanisms.md | 扫描机制 | 📝 |
-| 05-startup-script.md | st.cmd详解 | 📝 |
+| 01-db-file-structure.md | .db文件结构 | ✅ |
+| 02-record-configuration.md | Record配置 | ✅ |
+| 03-pv-naming.md | PV命名规范 | ✅ |
+| 04-scan-mechanisms.md | 扫描机制 | ✅ |
+| 05-startup-script.md | st.cmd详解 | ✅ |
 
 ## 🎯 学习要点
 
