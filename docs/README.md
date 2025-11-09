@@ -115,14 +115,14 @@
 | **[Part 12](./part12-advanced-topics/)** | 进阶主题 | ✅ | 10/10 | ⭐⭐⭐⭐⭐ | 性能优化、CA编程、分布式IOC、异步IO、自定义Record ✅完成 |
 | **[Part 14](./part14-case-studies/)** | 案例研究 | ✅ | 6/6 | ⭐⭐⭐ | 完整项目、性能优化、多设备、集成、排错、重构 ✅完成 |
 | **[Part 16](./part16-best-practices/)** | 最佳实践 | ✅ | 8/8 | ⭐⭐⭐ | 代码规范、项目结构、版本控制、文档、Code Review ✅完成 |
-| **[Part 17](./part17-physics-background/)** | 物理背景 | 📋 | 0/5 | ⭐⭐ | 加速器物理基础 |
+| **[Part 17](./part17-physics-background/)** | 物理背景 | ✅ | 5/5 | ⭐⭐ | 加速器物理、BPM原理、RF信号、LLRF系统、束流测量 ✅完成 |
 
 ### ⚪ 参考资料（按需查阅）
 
 | 部分 | 名称 | 状态 | 说明 |
 |------|------|------|------|
 | **[Part 15](./part15-reference/)** | 参考手册 | 🚧 | API、数据结构、PV列表（已有PV和Offset表） |
-| **[Part 18](./part18-appendix/)** | 附录 | 📋 | 术语表、FAQ、资源链接 |
+| **[Part 18](./part18-appendix/)** | 附录 | ✅ | 术语表、FAQ、外部资源、快速参考 ✅完成 |
 
 ### 🎯 扩展学习
 
