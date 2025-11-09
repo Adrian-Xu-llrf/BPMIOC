@@ -31,16 +31,16 @@
 4. ✅ **[Part 8](./part8-hands-on-labs/)** - 动手实验（5个已完成）
    - Lab 1-5: RF信号追踪、扫描修改、调试添加、初始化理解、波形绘制
 
-5. ✅ **[Part 9](./part9-simulator-tutorial/)** - 模拟器编写教程（完整）
-   - 从零开始学习如何编写硬件模拟器（~1000行详细教程）
-
-6. ✅ **[Part 11](./part11-weekly-plan/)** - 学习计划（2个文档）
+5. ✅ **[Part 11](./part11-weekly-plan/)** - 学习计划（2个文档）
    - README、Week 1详细计划
 
 7. ✅ **[Part 15](./part15-reference/)** - 参考资料（2个表格）
    - PV完整列表、Offset完整列表
 
-8. ✅ **[simulator/](../simulator/)** - 硬件模拟库（完整实现）
+8. ✅ **[Part 19](./part19-simulator-tutorial/)** - 模拟器编写教程（完整）
+   - 从零开始学习如何编写硬件模拟器（~1000行详细教程）
+
+9. ✅ **[simulator/](../simulator/)** - 硬件模拟库（完整实现）
    - Mock库、数据生成器、文件回放、故障注入、测试用例
    - 🎯 **核心亮点**：支持在PC上开发，无需FPGA硬件！
 
@@ -51,7 +51,7 @@
 1. 📖 阅读 [QUICK_START.md](./QUICK_START.md) - 30分钟快速上手
 2. 🗺️ 查看 [ROADMAP.md](./ROADMAP.md) - 了解完整学习路线
 3. 📚 进入 [Part 1: 快速复现](./part1-quick-reproduction/) - 详细安装步骤
-4. 💡 学习 [Part 9: 模拟器教程](./part9-simulator-tutorial/how-to-write-simulator.md) - 掌握PC开发
+4. 💡 学习 [Part 19: 模拟器教程](./part19-simulator-tutorial/how-to-write-simulator.md) - 掌握PC开发
 5. 📅 参考 [Part 11: 8周学习计划](./part11-weekly-plan/) - 系统学习
 
 ## 📚 文档结构
@@ -80,7 +80,7 @@
 | 部分 | 名称 | 状态 | 文档数 | 重要性 | 说明 |
 |------|------|------|--------|--------|------|
 | **[Part 8](./part8-hands-on-labs/)** | 实验室 | 🚧 | 5/15 | ⭐⭐⭐⭐⭐ | 15个hands-on实验 |
-| **[Part 9](./part9-simulator-tutorial/)** | **模拟器教程** | ✅ | 1 | ⭐⭐⭐⭐⭐ | 如何编写硬件模拟器 |
+| **[Part 9](./part9-tutorials/)** | 完整教程 | 📋 | 0/5 | ⭐⭐⭐⭐ | 5个完整项目教程 |
 | **[Part 10](./part10-debugging-testing/)** | 调试与测试 | 📋 | 0/12 | ⭐⭐⭐⭐ | 调试技巧大全 |
 
 ### 🟢 系统学习（推荐）
@@ -105,6 +105,12 @@
 |------|------|------|------|
 | **[Part 15](./part15-reference/)** | 参考手册 | 🚧 | API、数据结构、PV列表（已有PV和Offset表） |
 | **[Part 18](./part18-appendix/)** | 附录 | 📋 | 术语表、FAQ、资源链接 |
+
+### 🎯 扩展学习
+
+| 部分 | 名称 | 状态 | 文档数 | 重要性 | 说明 |
+|------|------|------|--------|--------|------|
+| **[Part 19](./part19-simulator-tutorial/)** | 模拟器编写教程 | ✅ | 1 | ⭐⭐⭐⭐⭐ | 从零开始学习写模拟器 |
 
 ### 🎯 Simulator（独立项目）
 
@@ -146,7 +152,7 @@ Part 3 → Part 4 → Part 5 → Part 6 → Part 8 (修改实验)
 **目标**: 从零搭建类似项目，部署到真实硬件
 
 ```
-Part 9 (模拟器教程) → simulator/ → Part 8 (高级实验) → Part 13
+Part 19 (模拟器教程) → simulator/ → Part 8 (高级实验) → Part 13
 ```
 
 **完成标准**:
@@ -186,7 +192,7 @@ Day 5-7: Part 8 (基础实验 1-5)
 
 - **数据流分析** → Part 3 ([02-data-flow.md](./part3-bpmioc-architecture/02-data-flow.md)), Part 8 ([lab01](./part8-hands-on-labs/labs-basic/lab01-trace-rf-amp.md))
 - **初始化过程** → Part 3 ([03-initialization-sequence.md](./part3-bpmioc-architecture/03-initialization-sequence.md)), Part 8 ([lab04](./part8-hands-on-labs/labs-basic/lab04-understand-init.md))
-- **PC模拟开发** → Part 9 ([模拟器教程](./part9-simulator-tutorial/how-to-write-simulator.md)), [simulator/](../simulator/)
+- **PC模拟开发** → Part 19 ([模拟器教程](./part19-simulator-tutorial/how-to-write-simulator.md)), [simulator/](../simulator/)
 - **PV列表** → Part 15 ([pv-table.md](./part15-reference/tables/pv-table.md))
 - **Offset列表** → Part 15 ([offset-table.md](./part15-reference/tables/offset-table.md))
 - **编译问题** → Part 1 ([05-enable-simulation.md](./part1-quick-reproduction/05-enable-simulation.md))
@@ -203,8 +209,8 @@ Day 5-7: Part 8 (基础实验 1-5)
 ### 按问题类型查找
 
 - **概念不理解** → Part 2 ([基础概念](./part2-understanding-basics/))
-- **不知道怎么做** → Part 8 ([动手实验](./part8-hands-on-labs/)), Part 9 ([模拟器教程](./part9-simulator-tutorial/))
-- **想在PC上开发** → [simulator/](../simulator/), Part 9 ([模拟器教程](./part9-simulator-tutorial/how-to-write-simulator.md))
+- **不知道怎么做** → Part 8 ([动手实验](./part8-hands-on-labs/)), Part 19 ([模拟器教程](./part19-simulator-tutorial/))
+- **想在PC上开发** → [simulator/](../simulator/), Part 19 ([模拟器教程](./part19-simulator-tutorial/how-to-write-simulator.md))
 
 ## 💡 使用建议
 
@@ -268,7 +274,7 @@ Day 5-7: Part 8 (基础实验 1-5)
 - **了解学习路线** → [ROADMAP.md](./ROADMAP.md)
 - **跟着计划学习** → [Part 11](./part11-weekly-plan/)
 - **理解数据流** → [Part 3: 02-data-flow](./part3-bpmioc-architecture/02-data-flow.md)
-- **学习写模拟器** → [Part 9: 模拟器教程](./part9-simulator-tutorial/how-to-write-simulator.md)
+- **学习写模拟器** → [Part 19: 模拟器教程](./part19-simulator-tutorial/how-to-write-simulator.md)
 - **PC开发无需硬件** → [simulator/](../simulator/)
 - **查看PV列表** → [Part 15: PV参考表](./part15-reference/tables/pv-table.md)
 - **查看Offset列表** → [Part 15: Offset参考表](./part15-reference/tables/offset-table.md)
