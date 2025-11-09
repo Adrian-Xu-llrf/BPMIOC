@@ -27,10 +27,10 @@ Part 7详细分析EPICS构建系统，包括Makefile的编写和编译流程。
 | 文档 | 描述 | 状态 |
 |------|------|------|
 | README.md | 本文档 | ✅ |
-| 01-build-overview.md | 构建系统概述 | 📝 |
-| 02-makefile-structure.md | Makefile结构 | 📝 |
-| 03-cross-compile.md | 交叉编译 | 📝 |
-| 04-dependencies.md | 依赖管理 | 📝 |
+| 01-build-overview.md | 构建系统概述 | ✅ |
+| 02-makefile-structure.md | Makefile结构 | ✅ |
+| 03-cross-compile.md | 交叉编译 | ✅ |
+| 04-dependencies.md | 依赖管理 | ✅ |
 
 ## 🎯 学习要点
 
