@@ -1,0 +1,22 @@
+# Compiled executables
+test_waveform
+test_mock_driver
+generate_test_data
+
+# Object files
+*.o
+
+# Shared libraries
+*.so
+*.a
+
+# Test output
+test_data/output/
+logs/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
