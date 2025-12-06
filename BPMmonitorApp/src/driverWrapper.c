@@ -20,6 +20,7 @@
 #include <epicsExport.h>
 
 #include "driverWrapper.h"
+#include "voltageCalculator.h"  /* 新增模块：波形平均电压计算（你的代码） */
 
 typedef uint64_t U64;
 typedef uint32_t U32;
@@ -107,18 +108,8 @@ static int pulseMode=0;
 static int AVGStart=0;
 static int AVGStop=0;
 
-static int BackGroundStart=0;
-static int BackGroundStop=0;
-static int rf3_avg_volt=0;
-static int rf4_avg_volt=0;
-static int rf5_avg_volt=0;
-static int rf6_avg_volt=0;
-static int rf7_avg_volt=0;
-static int rf8_avg_volt=0;
-static int rf9_avg_volt=0;
-static int rf10_avg_volt=0;
-
-
+/* ========== 新增变量已移至 voltageCalculator.c 模块 ========== */
+/* 移除的变量：BackGroundStart, BackGroundStop, rf3~rf10_avg_volt */
 
 static float X1_avg=0;
 static float Y1_avg=0;
@@ -211,8 +202,7 @@ static void (*funcSetFreqControlWordtoDDS)(int value);
 static void (*funcSetSelectExternelTrigger)(int value);
 static void SetSysTime(void);
 
-// calculate average voltage of each channel
-static void calculateAvgVoltage(float *wfBuf, int ch_N, int length);
+/* ========== 新增函数声明已移至 voltageCalculator.h 模块 ========== */
 
 static long InitDevice()
 {
@@ -294,7 +284,10 @@ static long InitDevice()
 	scanIoInit(&TriginScanPvt);
 	scanIoInit(&TripBufferinScanPvt);
 	scanIoInit(&ADCrawBufferinScanPvt);
-	
+
+	/* ========== 初始化新增的电压计算模块（你的代码） ========== */
+	voltCalc_init();
+
 	return 0;
 }
 
@@ -556,20 +549,9 @@ float ReadData(int offset, int channel, int type)
 			{
 				return ((ph_ch8+ph_ch9+ph_ch10)/3);
 			}
+		/* ========== 新增：读取平均电压（你的代码） ========== */
 		case 34:
-			switch(channel){
-				case 0:return rf3_avg_volt;
-				case 1:return rf4_avg_volt;
-				case 2:return rf5_avg_volt;
-				case 3:return rf6_avg_volt;
-				case 4:return rf7_avg_volt;
-				case 5:return rf8_avg_volt;
-				case 6:return rf9_avg_volt;
-				case 7:return rf10_avg_volt;
-				default: return 0;
-
-
-			}
+			return voltCalc_getAvgVoltage(channel);
 		case 93:
 			return funcGetWRStatus(channel);
 		default:
@@ -688,9 +670,11 @@ void SetReg(int offset, int channel, float val)
 			break;
 		case 20:
 			AVGStart = val_tmp;
+			voltCalc_setSignalStart(val_tmp);  /* 同步到新模块 */
 			break;
 		case 21:
 			AVGStop = val_tmp;
+			voltCalc_setSignalStop(val_tmp);  /* 同步到新模块 */
 			break;
 		case 22:
 			SetFastIntlkFilterTime(val);
@@ -707,11 +691,12 @@ void SetReg(int offset, int channel, float val)
 		case 26:
 			SelectTriggerSource(val_tmp);
 			break;
+		/* ========== 新增：设置本底范围（你的代码） ========== */
 		case 27:
-			BackGroundStart = val_tmp;
+			voltCalc_setBackgroundStart(val_tmp);
 			break;
 		case 28:
-			BackGroundStop = val_tmp;
+			voltCalc_setBackgroundStop(val_tmp);
 			break;
 		default:
 			printf("Call SetReg function with Unknown offset value.\n");	
@@ -759,44 +744,45 @@ void readWaveform(int offset, int ch_N, unsigned int nelem, float* data, long lo
 //		case 10:
 //			funcGetTriggerAllData(0, 9, data);
 //			break;
+		/* ========== 新增：在读取波形时计算平均电压（你的代码） ========== */
 		case 11:
 			copyArray(rf3amp, data, 0, nelem);
-			calculateAvgVoltage(data,0,nelem);
+			voltCalc_calculateAvgVoltage(data, 0, nelem);
 //			funcGetTriggerAllData(1, 0, data);
 			break;
 		case 12:
 			copyArray(rf4amp, data, 2, nelem);
-			calculateAvgVoltage(data,2,nelem);
+			voltCalc_calculateAvgVoltage(data, 2, nelem);
 //			funcGetTriggerAllData(1, 2, data);
 			break;
 		case 13:
 			copyArray(rf5amp, data, 4, nelem);
-			calculateAvgVoltage(data,4,nelem);
+			voltCalc_calculateAvgVoltage(data, 4, nelem);
 //			funcGetTriggerAllData(1, 4, data);
 			break;
 		case 14:
 			copyArray(rf6amp, data, 6, nelem);
-			calculateAvgVoltage(data,6,nelem);
+			voltCalc_calculateAvgVoltage(data, 6, nelem);
 //			funcGetTriggerAllData(1, 6, data);
 			break;
 		case 15:
 			copyArray(rf7amp, data, 8, nelem);
-			calculateAvgVoltage(data,8,nelem);
+			voltCalc_calculateAvgVoltage(data, 8, nelem);
 //			funcGetTriggerAllData(1, 8, data);
 			break;
 		case 16:
 			copyArray(rf8amp, data, 10, nelem);
-			calculateAvgVoltage(data,10,nelem);
+			voltCalc_calculateAvgVoltage(data, 10, nelem);
 //			funcGetTriggerAllData(1, 10, data);
 			break;
 		case 17:
 			copyArray(rf9amp, data, 12, nelem);
-			calculateAvgVoltage(data,12,nelem);
+			voltCalc_calculateAvgVoltage(data, 12, nelem);
 //			funcGetTriggerAllData(1, 12, data);
 			break;
 		case 18:
 			copyArray(rf10amp, data, 14, nelem);
-			calculateAvgVoltage(data,14,nelem);
+			voltCalc_calculateAvgVoltage(data, 14, nelem);
 //			funcGetTriggerAllData(1, 14, data);
 			break;
 //		case 19:
@@ -1490,51 +1476,10 @@ static void GetSysTime(void)
 	localtime_r((time_t*)&sec,&cur_tm);
 	char cur_time[20];
 	snprintf(cur_time,20,"%d-%02d-%02d %02d:%02d:%02d",cur_tm.tm_year+1900,cur_tm.tm_mon+1,cur_tm.tm_mday,cur_tm.tm_hour,cur_tm.tm_min,cur_tm.tm_sec);
-	printf("%s ",cur_time);		
+	printf("%s ",cur_time);
 }
 
-
-static void calculateAvgVoltage(float *wfBuf, int ch_N, int length)
-{
-	int i=0;
-	float signal_sum = 0;  // sum of effective signal
-	float background_sum = 0; // sum of background signal
-	int signal_count = 0; // count of effective signal
-	int background_count = 0; // count of background signal
-	float avg_volt = 0; // average voltage
-
-	for (i=0;i<length;i++){
-		if(i>=AVGStart && i<=AVGStop){
-			signal_sum += wfBuf[i];
-
-		}
-		if(i>=BackGroundStart && i<=BackGroundStop)
-		{
-			background_sum += wfBuf[i];
-
-		}	
-	}
-	signal_count = AVGStop - AVGStart + 1;
-	background_count = BackGroundStop - BackGroundStart + 1;
-
-	if (signal_count > 0 && background_count > 0){
-		avg_volt = signal_sum / signal_count - background_sum / background_count;
-
-	}
-	else{
-		avg_volt = 0;
-	}
-
-	switch(ch_N){
-		case 0: rf3_avg_volt = avg_volt; break;
-		case 2: rf4_avg_volt = avg_volt; break;
-		case 4: rf5_avg_volt = avg_volt; break;
-		case 6: rf6_avg_volt = avg_volt; break;
-		case 8: rf7_avg_volt = avg_volt; break;
-		case 10: rf8_avg_volt = avg_volt; break;
-		case 12: rf9_avg_volt = avg_volt; break;
-		case 14: rf10_avg_volt = avg_volt; break;
-	
-	}
-	
-}
+/* ========================================================================== */
+/* 注意：calculateAvgVoltage 函数已经移到 voltageCalculator.c 模块中        */
+/* 这是你新增的功能，现在已经与原有代码隔离                                   */
+/* ========================================================================== */

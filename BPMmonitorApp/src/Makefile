@@ -31,6 +31,7 @@ BPMmonitor_SRCS_vxWorks += -nil-
 
 BPMmonitor_SRCS += driverWrapper.c
 BPMmonitor_SRCS += devBPMMonitor.c
+BPMmonitor_SRCS += voltageCalculator.c  # 新增模块：波形平均电压计算
 
 # Add support from base/src/vxWorks if needed
 #BPMmonitor_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
