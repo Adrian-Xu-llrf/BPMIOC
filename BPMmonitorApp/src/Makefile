@@ -29,6 +29,7 @@ BPMmonitor_SRCS += BPMmonitor_registerRecordDeviceDriver.cpp
 BPMmonitor_SRCS_DEFAULT += BPMmonitorMain.cpp
 BPMmonitor_SRCS_vxWorks += -nil-
 
+BPMmonitor_SRCS += avg_voltage.c
 BPMmonitor_SRCS += driverWrapper.c
 BPMmonitor_SRCS += devBPMMonitor.c
 
