@@ -1,0 +1,146 @@
+###############################################################
+# 电压计算器数据库文件
+# 作者：你的名字
+# 日期：2025-12-06
+#
+# 这是一个完全独立的应用，通过CA读取BPM波形并计算平均电压
+# 不需要修改BPMmonitor的任何代码
+###############################################################
+
+# ========== 参数设置 PV ========== #
+
+# 信号区起始点
+record(ao, "$(P):SignalStart")
+{
+    field(DTYP, "VoltCalc")
+    field(OUT,  "@signalStart")
+    field(DESC, "Signal region start point")
+    field(EGU,  "point")
+    field(PINI, "YES")
+    field(VAL,  "0")
+}
+
+# 信号区结束点
+record(ao, "$(P):SignalStop")
+{
+    field(DTYP, "VoltCalc")
+    field(OUT,  "@signalStop")
+    field(DESC, "Signal region stop point")
+    field(EGU,  "point")
+    field(PINI, "YES")
+    field(VAL,  "100")
+}
+
+# 本底区起始点
+record(ao, "$(P):BackgroundStart")
+{
+    field(DTYP, "VoltCalc")
+    field(OUT,  "@backgroundStart")
+    field(DESC, "Background region start point")
+    field(EGU,  "point")
+    field(PINI, "YES")
+    field(VAL,  "1600")
+}
+
+# 本底区结束点
+record(ao, "$(P):BackgroundStop")
+{
+    field(DTYP, "VoltCalc")
+    field(OUT,  "@backgroundStop")
+    field(DESC, "Background region stop point")
+    field(EGU,  "point")
+    field(PINI, "YES")
+    field(VAL,  "1650")
+}
+
+# ========== 平均电压输出 PV（BPM1: RF3-RF6） ========== #
+
+# RF3 平均电压
+record(ai, "$(P):RF3:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@0")
+    field(DESC, "RF3 average voltage (signal-background)")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# RF4 平均电压
+record(ai, "$(P):RF4:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@1")
+    field(DESC, "RF4 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# RF5 平均电压
+record(ai, "$(P):RF5:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@2")
+    field(DESC, "RF5 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# RF6 平均电压
+record(ai, "$(P):RF6:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@3")
+    field(DESC, "RF6 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# ========== 平均电压输出 PV（BPM2: RF7-RF10） ========== #
+
+# RF7 平均电压
+record(ai, "$(P):RF7:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@4")
+    field(DESC, "RF7 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# RF8 平均电压
+record(ai, "$(P):RF8:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@5")
+    field(DESC, "RF8 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# RF9 平均电压
+record(ai, "$(P):RF9:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@6")
+    field(DESC, "RF9 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+# RF10 平均电压
+record(ai, "$(P):RF10:AvgVolt")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "VoltCalc")
+    field(INP,  "@7")
+    field(DESC, "RF10 average voltage")
+    field(EGU,  "V")
+    field(PREC, "6")
+}

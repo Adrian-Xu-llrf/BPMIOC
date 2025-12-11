@@ -1,0 +1,6 @@
+# Device Support for Voltage Calculator
+device(ai, INST_IO, devAiVoltCalc, "VoltCalc")
+device(ao, INST_IO, devAoVoltCalc, "VoltCalc")
+
+# Registrar function
+registrar(voltCalcRegister)
